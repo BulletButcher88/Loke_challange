@@ -97,8 +97,6 @@
  
 
 
-
-
 // 5th solution: one line function that processes 0.114mss
 
 console.time('fibonacci one line function')
