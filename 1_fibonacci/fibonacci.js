@@ -16,23 +16,25 @@
 // 1st solution: iterative processes in around 0.139ms
 
 
-console.time('fibonacci iterative')
+// console.time('fibonacci iterative')
 
-function fibonacci(n) {
-  let arr = [0 , 1]
-  for( let x = 2; x <= n; x++){
-    let a = arr[x - 1];
-    let b = arr[x -2]
-    arr.push(a + b);
-  }
-  return arr[n]
-}
+// function fibonacci(n) {
+//   let arr = [0 , 1]
+//   for( let x = 2; x <= n; x++){
+//     let a = arr[x - 1];
+//     let b = arr[x -2]
+//     arr.push(a + b);
+//   }
+//   return arr[n]
+// }
 
-for (let i = 1; i < 10; i++) {
-  fibonacci(i)
-}
+// for (let i = 1; i < 10; i++) {
+//   fibonacci(i)
+// }
 
-console.timeEnd('fibonacci iterative')
+// console.timeEnd('fibonacci iterative')
+
+
 
 
 // 2nd solution: recursive processes in around 0.123ms
@@ -53,9 +55,9 @@ console.timeEnd('fibonacci iterative')
 // console.timeEnd('fibonacci recursive')
 
 
+
+
 // 3rd solution: while loop processes in around 0.117ms
-
-
 
 // console.time('fibonacci loop')
 
@@ -75,3 +77,36 @@ console.timeEnd('fibonacci iterative')
 // fibonacci(8)
 
 // console.timeEnd('fibonacci loop')
+
+
+
+
+
+
+// 4th solution: one line function that processes 0.157ms
+// I am not 100% sure how this function works, with the higher order methods and functions producing an array. 
+
+
+// console.time('fibonacci one line function')
+
+// var fibonacci=(n)=>Array(n).fill().reduce((a,b,c)=>a.concat(c<2?c:a[c-1]+a[c-2]),[])
+
+// fibonacci(10)
+
+// console.timeEnd('fibonacci one line function')
+ 
+
+
+
+
+// 5th solution: one line function that processes 0.114mss
+
+console.time('fibonacci one line function')
+
+function fibonacci(n) {
+  return (n <= 2) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+fibonacci(9)
+
+console.timeEnd('fibonacci one line function')
